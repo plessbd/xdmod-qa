@@ -81,6 +81,7 @@ if [ "$repo_type" == "module" ]; then
     echo "Obtaining and integrating with Open XDMoD code..."
 
     xdmod_branch="${XDMOD_MAIN_BRANCH:-$TRAVIS_BRANCH}"
+    xdmod_branch="refactor-groupby-refactor"
     echo "Cloning Open XDMoD branch '$xdmod_branch'"
     git clone --depth=1 --branch="$xdmod_branch" https://github.com/ubccr/xdmod.git "$XDMOD_SOURCE_DIR"
 
