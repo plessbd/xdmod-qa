@@ -268,7 +268,7 @@ end_travis_fold syntax
 
 print_section_results "Syntax tests" $syntax_exit_value
 
-# Perform style tests.
+# Perform style testsld(.
 start_travis_fold style
 echo "Running style tests..."
 
@@ -407,14 +407,14 @@ build_exit_value=0
 
 echo "Building Open XDMoD..."
 build_package_path="$XDMOD_SOURCE_DIR/open_xdmod/build_scripts/build_package.php"
-"$build_package_path" --module xdmod
+"$build_package_path" --module xdmod --debug
 if [ $? != 0 ]; then
     build_exit_value=2
 fi
 
 if [ "$repo_type" == "module" ]; then
     echo "Building $XDMOD_MODULE_NAME module..."
-    "$build_package_path" --module "$XDMOD_MODULE_DIR"
+    "$build_package_path" --module "$XDMOD_MODULE_DIR" --debug
     if [ $? != 0 ]; then
         build_exit_value=2
     fi
